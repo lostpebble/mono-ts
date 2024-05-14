@@ -1,7 +1,7 @@
 export async function fetchJson<T>(
   endpoint: string,
   queryParams: { [key: string]: string | number | boolean | undefined } = {},
-  options: RequestInit = {}
+  options: RequestInit = {},
 ) {
   const queryString = makeQueryString(queryParams);
 
@@ -19,7 +19,7 @@ export async function fetchJson<T>(
     throw new Error(
       `Fetch to ${url} failed with status ${
         response.status
-      }. Response text: ${await response.text()}`
+      }. Response text: ${await response.text()}`,
     );
   }
 
@@ -30,14 +30,14 @@ export async function fetchJson<T>(
   }
 }
 
-function makeQueryString(
-  params: { [key: string]: string | number | boolean | undefined } = {}
-) {
+function makeQueryString(params: { [key: string]: string | number | boolean | undefined } = {}) {
   const queryString = new URLSearchParams();
 
-  Object.entries(params)
-    .filter(([, value]) => value !== undefined)
-    .forEach(([name, value]) => queryString.append(name, String(value)));
+  for (const key in params) {
+    if (params[key] !== undefined) {
+      queryString.append(key, String(params[key]));
+    }
+  }
 
   return queryString.toString();
 }

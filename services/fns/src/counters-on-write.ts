@@ -1,4 +1,4 @@
-import { areWeThereYet, type Counter } from "@repo/common";
+import { type Counter, areWeThereYet } from "@repo/common";
 import functions from "firebase-functions";
 import { incrementField, serverTimestamp } from "firestore-server-utils";
 import { counterFlagThreshold, region } from "~/config.js";

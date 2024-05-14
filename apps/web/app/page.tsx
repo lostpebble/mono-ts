@@ -12,17 +12,11 @@ export default function Home() {
       <h1 className={"text-xl"}>A quest for the ideal TS monorepo</h1>
 
       <div className="grid grid-cols-2 gap-4">
-        <CardWithAction
-          title="Are we there yet? "
-          description={areWeThereYet()}
-        >
+        <CardWithAction title="Are we there yet? " description={areWeThereYet()}>
           <CardDescription>
-            To test live updates to the backend services while the emulator is
-            running, you can update code in{" "}
-            <code className="text-zinc-800">
-              services/api/src/v1/handlers.ts
-            </code>
-            . For example change the multiplication{" "}
+            To test live updates to the backend services while the emulator is running, you can
+            update code in <code className="text-zinc-800">services/api/src/v1/handlers.ts</code>.
+            For example change the multiplication{" "}
             <code className="text-zinc-800">counter.data.value * n</code> to{" "}
             <code className="text-zinc-800">counter.data.value * n * 10</code>
           </CardDescription>

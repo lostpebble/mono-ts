@@ -4,8 +4,7 @@ const endpoint = process.env.NEXT_PUBLIC_DEMO_API_ENDPOINT;
  * In a real application you would typically not embed an API key like this, as
  * it is easily exposed. This is only for demo purposes.
  */
-const demoApiKey =
-  process.env.NEXT_PUBLIC_DEMO_API_KEY ?? "__missing_demo_api_key";
+const demoApiKey = process.env.NEXT_PUBLIC_DEMO_API_KEY ?? "__missing_demo_api_key";
 
 const headers = {
   "x-demo-api-key": demoApiKey,

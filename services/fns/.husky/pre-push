@@ -1,0 +1,4 @@
+branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$branch" = "deploy/backend_v2/dev" ] || [ "$branch" = "deploy/backend_v2/production" ] || [ "$branch" = "deploy/relayer/dev" ] || [ "$branch" = "deploy/relayer/production" ] || [ "$branch" = "deploy/tg_bot/dev" ] || [ "$branch" = "deploy/tg_bot/production" ] || [ "$branch" = "deploy/scheduler/dev" ] || [ "$branch" = "deploy/scheduler/production" ]; then
+	bun run type-check
+fi

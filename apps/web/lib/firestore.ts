@@ -7,9 +7,7 @@ type FsDocument<T> = {
   ref: DocumentReference;
 };
 
-export function useTypedDocument<T>(
-  ref: DocumentReference
-): [FsDocument<T> | undefined, boolean] {
+export function useTypedDocument<T>(ref: DocumentReference): [FsDocument<T> | undefined, boolean] {
   const [snapshot, isLoading, error] = useDocument(ref);
 
   if (error) {

@@ -5,17 +5,13 @@
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "files": [
-    "dist",
-    ".env.*"
-  ],
+  "files": ["dist", ".env.*"],
   "scripts": {
     "type:check": "tsc --noEmit",
     "build": "tsup-node",
     "?": "This is not the recommended way to integrate isolate, see services/api and docs instead",
     "dev": "run-s build isolate emulate",
     "isolate": "isolate",
-    "lint": "eslint . --max-warnings 0",
     "deploy": "firebase deploy",
     "emulate": "firebase emulators:start --project demo-mono-ts",
     "db:get-indexes": "firebase firestore:indexes > firestore.indexes.json"
@@ -37,7 +33,6 @@
     "ts-is-present": "^1.2.2"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",

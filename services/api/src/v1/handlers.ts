@@ -2,11 +2,7 @@ import { isPlainObject } from "@repo/backend/utils";
 import type { Counter } from "@repo/common";
 import { getErrorMessage } from "@repo/common";
 import type { Request, Response } from "express";
-import {
-  getDocument,
-  incrementField,
-  serverTimestamp,
-} from "firestore-server-utils";
+import { getDocument, incrementField, serverTimestamp } from "firestore-server-utils";
 import { refs } from "~/refs.js";
 
 export async function reset(_req: Request, res: Response) {

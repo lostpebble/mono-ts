@@ -69,7 +69,6 @@ and I recommend reading
 - A web app based on Next.js with [ShadCN](https://ui.shadcn.com/) and
   [Tailwind CSS](https://tailwindcss.com/)
 - Using ESM throughout, including the Next.js app
-- Shared configurations for ESLint and Typescript
 - Path aliases
 - Working IDE go-to-definition and go-to-type-definition using `.d.ts.map` files
 - Vitest
@@ -212,10 +211,7 @@ directly, because CJS imports are synchronous and ESM imports are asynchronous.
 
 Not having to use ESM import extensions can be especially valuable if you are
 trying to convert a large codebase to ESM, because I have yet to find a solution
-that can convert existing imports. There is
-[this ESLint plugin](https://github.com/solana-labs/eslint-plugin-require-extensions)
-that you could use it in combination with the --fix flag to inject the
-extensions, but at the time of writing it does not understand path aliases.
+that can convert existing imports.
 
 ### Tree shaking
 

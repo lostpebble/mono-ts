@@ -12,9 +12,7 @@ export function startTimer(timerLabel = "Timer") {
       const time = now - timer;
 
       console.log(
-        `${timerLabel} @ ${
-          pointLabel ?? `point ${++pointCount}`
-        } is ${time} ms (+ ${elapsed} ms)`
+        `${timerLabel} @ ${pointLabel ?? `point ${++pointCount}`} is ${time} ms (+ ${elapsed} ms)`,
       );
 
       lastPoint = now;

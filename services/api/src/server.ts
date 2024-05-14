@@ -21,7 +21,7 @@ app.use(noCache);
 app.use(compression());
 app.use(bodyParser.json());
 app.get("/", (_, res) =>
-  res.send(`API is up and running. DEMO_ENV_VAR: ${process.env.DEMO_ENV_VAR}.`)
+  res.send(`API is up and running. DEMO_ENV_VAR: ${process.env.DEMO_ENV_VAR}.`),
 );
 
 app.use("/v1", v1);
@@ -39,5 +39,5 @@ export const api = onRequest(
     region,
     secrets: [demoApiKey],
   },
-  app
+  app,
 );

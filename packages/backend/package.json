@@ -2,9 +2,7 @@
   "name": "@repo/backend",
   "version": "0.0.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "types": "./dist/index.d.ts",
   "exports": {
     "./utils": "./dist/utils/index.js",
@@ -20,8 +18,7 @@
     "dev": "run-p bundle:watch type:gen:watch",
     "clean": "del dist tsconfig.tsbuildinfo",
     "test": "vitest",
-    "coverage": "vitest run --coverage ",
-    "lint": "eslint . --max-warnings 0"
+    "coverage": "vitest run --coverage "
   },
   "license": "MIT",
   "dependencies": {
@@ -32,7 +29,6 @@
     "ts-is-present": "^1.2.2"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.12.7",
     "del-cli": "^5.1.0",

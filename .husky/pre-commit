@@ -1,0 +1,2 @@
+bunx lint-staged
+bun run ./scripts/commit_env_var_check.ts

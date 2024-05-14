@@ -23,9 +23,7 @@ export default function CardWithAction(props: {
         <CardTitle>{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
       </CardHeader>
-      {props.children && (
-        <CardContent className="text-sm">{props.children}</CardContent>
-      )}
+      {props.children && <CardContent className="text-sm">{props.children}</CardContent>}
       {props.action && (
         <CardFooter className="bg-zinc-100 py-4 dark:bg-zinc-800">
           <Button size="sm" onClick={props.action.handler}>

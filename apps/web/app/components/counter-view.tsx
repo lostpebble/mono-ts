@@ -5,9 +5,7 @@ import { refs } from "~/refs.js";
 import KeyValueList from "./key-value-list.jsx";
 
 export function CounterView(props: { counterId: string }) {
-  const [counter, isLoading] = useTypedDocument<Counter>(
-    doc(refs.counters, props.counterId)
-  );
+  const [counter, isLoading] = useTypedDocument<Counter>(doc(refs.counters, props.counterId));
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -24,7 +22,7 @@ export function CounterView(props: { counterId: string }) {
         ]}
       />
     );
-  } else {
-    return <div>No counter document available. Please press "reset".</div>;
   }
+
+  return <div>No counter document available. Please press "reset".</div>;
 }
