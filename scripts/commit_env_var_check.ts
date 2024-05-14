@@ -6,7 +6,7 @@ const glob = new Glob("**/*.env*");
 const envFiles: string[] = [];
 const bunFiles: BunFile[] = [];
 
-// Scans the current working directory and each of its sub-directories recursively
+// Scans the current working directory and each of its subdirectories recursively
 for await (const file of glob.scan({
   cwd: ".",
   dot: true,
@@ -79,25 +79,29 @@ for (const bunFile of bunFiles) {
   envVarInfoArray.push(...envVarInfo);
 }
 
-const console_color_green = "\x1b[32m";
-const console_color_red = "\x1b[31m";
-const console_color_yellow = "\x1b[33m";
+function printAllThings() {
+  const console_color_green = "\x1b[32m";
+  const console_color_red = "\x1b[31m";
+  const console_color_yellow = "\x1b[33m";
 
-for (const { isCommitted, isLocal, filePath, key, value } of envVarInfoArray) {
-  const print = `${filePath} -> ${key}=${value}${isCommitted ? " COMMITTED" : ""} ${
-    isLocal ? " LOCAL" : ""
-  }`;
+  for (const { isCommitted, isLocal, filePath, key, value } of envVarInfoArray) {
+    const print = `${filePath} -> ${key}=${value}${isCommitted ? " COMMITTED" : ""} ${
+      isLocal ? " LOCAL" : ""
+    }`;
 
-  const prefixColor = isCommitted
-    ? console_color_green
-    : isCommitted && isLocal
-      ? console_color_red
-      : console_color_yellow;
+    const prefixColor = isCommitted
+      ? console_color_green
+      : isCommitted && isLocal
+        ? console_color_red
+        : console_color_yellow;
 
-  // console.log(prefixColor, print);
+    console.log(prefixColor, print);
+  }
+
+  console.log("\x1b[0m");
 }
 
-// console.log("\x1b[0m");
+// printAllThings();
 
 const hasCommittedAndLocalFiles = envVarInfoArray.some(
   (envInfo) => envInfo.isLocal && envInfo.isCommitted,
